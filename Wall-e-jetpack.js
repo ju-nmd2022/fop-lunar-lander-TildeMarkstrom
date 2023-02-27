@@ -83,7 +83,6 @@ rect(236,100,8,20);
 
 rect(220,80, 40,20);
 
-
 //eye right 
 push();
 
@@ -120,7 +119,6 @@ pop();
 push();
 
 //eye left
-
 translate(225, 65);
 scale(1.2);
 fill(210);
@@ -264,12 +262,9 @@ endShape();
 
 pop();
 
-
-
 //hand right
 push();
 translate(310,206);
-
 
 rect(0,0, 20,10);
 pop();
@@ -299,11 +294,9 @@ vertex(0,5);
 endShape();
 pop();
 
-
 //hand left
 push();
 translate(151,206);
-
 
 rect(0,0, 20,10);
 pop();

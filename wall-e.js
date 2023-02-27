@@ -1,7 +1,5 @@
 background(255);
 
-
-
 //wheel right + left)
 fill(50);
 strokeWeight(4);
@@ -78,7 +76,6 @@ rect(236,100,8,20);
 
 rect(220,80, 40,20);
 
-
 //eye right 
 push();
 
@@ -115,7 +112,6 @@ pop();
 push();
 
 //eye left
-
 translate(225, 65);
 scale(1.2);
 fill(210);
