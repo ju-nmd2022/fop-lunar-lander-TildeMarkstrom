@@ -20,23 +20,81 @@ rect(275, 327, 10);
 ellipse(280, 343, 20);
 
 //neck
-fill(220,220,0);
+fill(255,197,28);
 strokeWeight(1);
-stroke(180,180,0);
-rect(230,110, 20, 40);
+stroke(235,177,18);
 
-rect(230,125, 20, 10);
+beginShape();
+vertex(225, 150);
+bezierVertex(225, 150, 225, 150, 232,120);
+bezierVertex(232,120, 232, 120, 248, 120);
+bezierVertex(248, 120, 248, 120, 255, 150);
+bezierVertex(255, 150, 255, 150, 225, 150);
+endShape();
+
+rect(236,100,8,20);
+
+rect(220,80, 40,20);
 
 //eyes
-noFill();
-stroke(0);
-strokeWeight(1);
-line(247,111,247,99);
+push();
 
+translate(255, 65);
+scale(1.2);
+fill(210);
+stroke(0);
+strokeWeight(3);
+
+line(0,0,55.43,19.95);
+
+beginShape();
+vertex(55.43, 19.95);
+bezierVertex(55.43, 19.95, 59.14 ,49.17 ,30.15, 47.31);
+bezierVertex(30.15, 47.31, 1.16, 45.46, -7.65, 19.95);
+bezierVertex(-7.65, 19.95, -8.11, 8.44, 0, 0);
+endShape();
+
+fill(50, 10, 40);
+ellipse(15, 23, 25);
+
+fill(40);
+strokeWeight(1);
+ellipse(2,8,4);
+ellipse(45, 30, 4);
+ellipse(30, 40, 4);
+
+pop();
+
+push();
+
+translate(225, 65);
+scale(1.2);
+fill(210);
+stroke(0);
+strokeWeight(3);
+
+line(0, 0, -55.43, 19.95);
+
+beginShape();
+vertex(-55.43, 19.95);
+bezierVertex(-55.43, 19.95, -59.14, 49.17, -30.7, 47.31);
+bezierVertex(-30.15, 47.31, -1.16, 45.46, 7.65, 19.95);
+bezierVertex(7.65, 19.95, 8.11, 8.44, 0, 0);
+endShape();
+
+fill(50, 10, 40);
+ellipse(-15, 23, 25);
+
+strokeWeight(1);
+fill(40);
+ellipse(-2, 8, 4);
+ellipse(-45, 30, 4);
+ellipse(-30, 40, 4);
+
+pop();
 
 //box
-fill(255,255,0);
-strokeWeight(1);
-stroke(180,180,0);
-rect(150,150,180,180);
-
+fill(255,197,28);
+strokeWeight(2);
+stroke(235,177,18);
+rect(160,150,160,160);
