@@ -3,15 +3,15 @@ createCanvas(600, 400);
 
 let particles = [];
 
-// The following 34 lines of code was adapted from Garrit Schaaps lectures
+
 //particles
+// The following 34 lines of code was adapted from Garrit Schaaps lectures
 function createParticle() {
   const x = Math.random() * width;
   const y = Math.random() * height;
-  const v = -0.6 + Math.random();
+  const v = -0.1 + 0.2 * Math.random();
   const a = Math.PI + Math.random() * Math.PI;
-  const t = 5 + Math.random();
-  return { x: x, y: y, velocity: v, angle: a, time: t, };
+  return { x: x, y: y, velocity: v, angle: a};
 }
 
 function drawParticle(particle) {
@@ -467,10 +467,13 @@ pop();
 
 pop();
 
+//-----------text----------
+
 textSize(20);
 fill(255,244, 40, 190);
 text("Press SPACE to start",145,180,200,40);
-
 }
 
-
+/* function startGame(){
+  spacebarIsPressed
+} */
