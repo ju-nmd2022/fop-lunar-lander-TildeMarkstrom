@@ -1,4 +1,127 @@
 background(255);
+//fire right
+
+push();
+scale(0.6);
+translate(550,600);
+angleMode(DEGREES);
+rotate(180);
+
+stroke(255,0,0);
+strokeWeight(1);
+fill(255,0,0);
+
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+
+push();
+translate(25, 30);
+scale(0.7);
+noStroke();
+fill(255, 125,0);
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+pop();
+
+push();
+translate(42, 50);
+scale(0.5);
+noStroke();
+fill(255, 255 ,0);
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+pop();
+
+pop();
+
+//fire left
+
+push();
+scale(0.6);
+translate(420,600);
+angleMode(DEGREES);
+rotate(180);
+
+stroke(255,0,0);
+strokeWeight(1);
+fill(255,0,0);
+
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+
+push();
+translate(25, 30);
+scale(0.7);
+noStroke();
+fill(255, 125,0);
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+pop();
+
+push();
+translate(42, 50);
+scale(0.5);
+noStroke();
+fill(255, 255 ,0);
+beginShape();
+vertex(100,100);
+bezierVertex(100, 100, 40, 110, 50, 50);
+bezierVertex(50, 50, 50, 30, 40, 20);
+bezierVertex(40, 20, 50, 30, 60, 30);
+bezierVertex(60, 30, 70, 30, 70, 0);
+bezierVertex(70, 0, 84, 52, 98 ,-40);
+bezierVertex(98, -40, 101, 30, 110, 40);
+bezierVertex(110, 40, 118, 25, 120, 13);
+bezierVertex(130, 13, 140, 100, 100, 100);
+endShape();
+pop();
+
+pop();
 
 //jetpack
 push();
