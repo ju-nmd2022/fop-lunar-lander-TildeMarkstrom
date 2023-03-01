@@ -1,9 +1,11 @@
+
+let firex = 0;
+let firey = 0;
+
 let x = 300;
 let y = 300;
 let s = 1.1;
 
-let firex = 0;
-let firey = 0;
 
 push();
 stroke(255,0,0);
