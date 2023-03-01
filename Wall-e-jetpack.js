@@ -1,6 +1,7 @@
 background(255);
 //fire right
 
+
 push();
 scale(0.6);
 translate(550,600);
