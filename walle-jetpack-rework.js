@@ -2,9 +2,9 @@
 let firex = 0;
 let firey = 0;
 
-let x = 300;
-let y = 300;
-let s = 1.1;
+let x = 200;
+let y = 200;
+let s = 1.4;
 
 
 push();
@@ -12,11 +12,13 @@ stroke(255,0,0);
 strokeWeight(1);
 fill(255,0,0);
 
+translate(x + 110* s,y + 140 * s);
+scale(1);
+rotate(PI);
 
-translate(x,y);
 beginShape();
 
-vertex(firex, firey);
+vertex(firex * s, firey * s);
 
 bezierVertex(firex, firey, firex - 60 * s, firey + 10 * s, firex - 50 * s , firey - 50 * s);
 bezierVertex(firex - 50 * s, firey - 50 * s, firex - 50 * s, firey - 70 * s, firex - 60 * s, firey - 80 * s);
@@ -29,13 +31,13 @@ bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey
 
 endShape();
 
-push();
 
 beginShape();
-scale(0.8);
+/* translate(x - 144* s,y - 140 * s); */
+scale(0.9);
 noStroke();
 fill(255,125, 12);
-vertex(firex , firey);
+vertex(firex * s, firey * s);
 
 bezierVertex(firex, firey, firex - 60 * s, firey + 10 * s, firex - 50 * s , firey - 50 * s);
 bezierVertex(firex - 50 * s, firey - 50 * s, firex - 50 * s, firey - 70 * s, firex - 60 * s, firey - 80 * s);
@@ -49,13 +51,9 @@ bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey
 endShape();
 fill(255, 255, 0);
 
-pop();
 
-push();
-
-beginShape();
-
-scale(0.7);
+/* translate(x - 130* s,y - 140 * s); */
+scale(0.8);
 
 vertex(firex , firey);
 
@@ -67,7 +65,67 @@ bezierVertex(firex - 30 * s, firey - 100 * s, firex - 16 * s, firey - 48 * s, fi
 bezierVertex(firex - 2 * s, firey - 140 * s, firex + 1 * s, firey - 70 * s, firex + 10 * s, firey - 60 * s);
 bezierVertex(firex + 10 * s, firey - 60 * s, firex + 18 * s, firey - 75 * s, firex + 20 * s, firey - 87 * s);
 bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey);
+
+endShape();
 pop();
+push();
+stroke(255,0,0);
+strokeWeight(1);
+fill(255,0,0);
+
+translate(x + 30* s,y + 140 * s);
+scale(1);
+rotate(PI);
+
+beginShape();
+
+vertex(firex * s, firey * s);
+
+bezierVertex(firex, firey, firex - 60 * s, firey + 10 * s, firex - 50 * s , firey - 50 * s);
+bezierVertex(firex - 50 * s, firey - 50 * s, firex - 50 * s, firey - 70 * s, firex - 60 * s, firey - 80 * s);
+bezierVertex(firex - 60 * s, firey - 80 * s, firex - 50 * s, firey - 70 * s, firex - 40 * s, firey - 70 * s);
+bezierVertex(firex - 40 * s, firey - 70 * s, firex - 30 * s, firey - 70 * s, firex - 30 * s, firey - 100 * s);
+bezierVertex(firex - 30 * s, firey - 100 * s, firex - 16 * s, firey - 48 * s, firex - 2 * s, firey - 140 * s);
+bezierVertex(firex - 2 * s, firey - 140 * s, firex + 1 * s, firey - 70 * s, firex + 10 * s, firey - 60 * s);
+bezierVertex(firex + 10 * s, firey - 60 * s, firex + 18 * s, firey - 75 * s, firex + 20 * s, firey - 87 * s);
+bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey);
+
+endShape();
+
+
+beginShape();
+/* translate(x - 144* s,y - 140 * s); */
+scale(0.9);
+noStroke();
+fill(255,125, 12);
+vertex(firex * s, firey * s);
+
+bezierVertex(firex, firey, firex - 60 * s, firey + 10 * s, firex - 50 * s , firey - 50 * s);
+bezierVertex(firex - 50 * s, firey - 50 * s, firex - 50 * s, firey - 70 * s, firex - 60 * s, firey - 80 * s);
+bezierVertex(firex - 60 * s, firey - 80 * s, firex - 50 * s, firey - 70 * s, firex - 40 * s, firey - 70 * s);
+bezierVertex(firex - 40 * s, firey - 70 * s, firex - 30 * s, firey - 70 * s, firex - 30 * s, firey - 100 * s);
+bezierVertex(firex - 30 * s, firey - 100 * s, firex - 16 * s, firey - 48 * s, firex - 2 * s, firey - 140 * s);
+bezierVertex(firex - 2 * s, firey - 140 * s, firex + 1 * s, firey - 70 * s, firex + 10 * s, firey - 60 * s);
+bezierVertex(firex + 10 * s, firey - 60 * s, firex + 18 * s, firey - 75 * s, firex + 20 * s, firey - 87 * s);
+bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey);
+
+endShape();
+fill(255, 255, 0);
+
+
+/* translate(x - 130* s,y - 140 * s); */
+scale(0.8);
+
+vertex(firex , firey);
+
+bezierVertex(firex, firey, firex - 60 * s, firey + 10 * s, firex - 50 * s , firey - 50 * s);
+bezierVertex(firex - 50 * s, firey - 50 * s, firex - 50 * s, firey - 70 * s, firex - 60 * s, firey - 80 * s);
+bezierVertex(firex - 60 * s, firey - 80 * s, firex - 50 * s, firey - 70 * s, firex - 40 * s, firey - 70 * s);
+bezierVertex(firex - 40 * s, firey - 70 * s, firex - 30 * s, firey - 70 * s, firex - 30 * s, firey - 100 * s);
+bezierVertex(firex - 30 * s, firey - 100 * s, firex - 16 * s, firey - 48 * s, firex - 2 * s, firey - 140 * s);
+bezierVertex(firex - 2 * s, firey - 140 * s, firex + 1 * s, firey - 70 * s, firex + 10 * s, firey - 60 * s);
+bezierVertex(firex + 10 * s, firey - 60 * s, firex + 18 * s, firey - 75 * s, firex + 20 * s, firey - 87 * s);
+bezierVertex(firex + 30 * s, firey - 87 * s, firex + 40 * s, firey, firex, firey);
 
 endShape();
 pop();
