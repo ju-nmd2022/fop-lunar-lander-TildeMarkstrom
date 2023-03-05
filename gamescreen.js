@@ -6,6 +6,17 @@ background(10,0,20);
 
 // ---------------- ground -----------------
 beginShape();
+fill(180, 200, 180);
+vertex(0,260);
+bezierVertex(33, 320, 75, 295, 89, 324);
+bezierVertex(94, 344,132,350,213,389);
+vertex(140,384);
+vertex(0,377);
+
+noStroke();
+endShape();
+
+beginShape();
 
 fill(235, 210, 230);
 noStroke(2);
@@ -456,7 +467,7 @@ pop();
 push();
 translate(x + 160 * s, y + 66 * s);
 
-rect(-20, 0, 20 * s, 10 * s);
+rect(-3, 0, 20 * s, 10 * s);
 pop();
 
 push();
