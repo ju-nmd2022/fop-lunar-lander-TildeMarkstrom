@@ -1,5 +1,11 @@
 createCanvas(600, 400);
 
+let wheelX = 0;
+let wheelY = 0;
+let wheelXrot = 0;
+let wheelYrot = 0;
+
+
 function draw(){
 background(10,0,20);
 
@@ -59,5 +65,45 @@ vertex(0, 340);
 
 endShape();
 
+textSize(20);
+fill(255, 244, 40, 190);
+text("Oh no! Wall-e crashed!",185,150,300,40);
+text("Press R to retry",220,190,200,40);
+
+push();
+rectMode(CENTER);
+
+translate(0,360);
+
+stroke(120);
+strokeWeight(3);
+fill(200);
+ellipse(wheelX, wheelY, 62);
+
+rect(wheelX, wheelY, 10, 76 );
+rect(wheelX, wheelY, 76, 10);
+
+push();
+rotate(PI/4);
+
+rect(wheelXrot, wheelYrot, 10, 76 );
+rect(wheelXrot, wheelYrot, 76, 10);
+
+pop();
+
+stroke(120);
+strokeWeight(0);
+ellipse(wheelX, wheelY, 60);
+
+
+strokeWeight(3);
+fill(236,218,194);
+ellipse(wheelX, wheelY, 30);
+pop();
+
+wheelX = wheelX + 2.83;
+
+wheelXrot = wheelXrot  + 2;
+wheelYrot = wheelYrot  - 2;
 
 }

@@ -1,4 +1,14 @@
 createCanvas(600, 400);
+frameRate(30);
+
+let firex = 0;
+let firey = 0;
+
+let x = 295;
+let velocity = 1;
+let acceleration =0.2;
+let y = -20;
+let s = 0.3;
 
 function draw(){
 background(10,0,20);
@@ -89,15 +99,6 @@ vertex(295, 376);
 endShape();
 
 // -- wall-e ---
-
-
-let firex = 0;
-let firey = 0;
-
-let x = 295;
-let y = 40;
-let s = 0.3;
-
 
 push();
 stroke(255,0,0);
@@ -534,5 +535,6 @@ vertex(0,0);
 endShape();
 pop();
 
-
+y = y + velocity;
+velocity = velocity + acceleration;
 }
