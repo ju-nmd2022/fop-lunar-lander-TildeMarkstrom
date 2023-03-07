@@ -1578,10 +1578,15 @@ if(state === "gamescreen" && gameIsActive === true){
 
 
  
-function resetscreen(){
+ function resetscreen(){
 y= -20;
+/* wheelX = 1;
+wheelY = 1;
+wheelXrot =1;
+wheelXrot = 1; */
 
-}
+
+} 
 
 //screens
 
