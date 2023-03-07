@@ -2,9 +2,9 @@ let x = 0;
 let y = 0;
 let s = 1;
 
-stroke(255,0,0);
+stroke(255);
 strokeWeight(1);
-fill(255,0,0);
+fill(255);
 
 rotate(PI);
 
@@ -22,7 +22,7 @@ bezierVertex(x + 10 * s, y - 60 * s, x + 18 * s, y - 75 * s, x + 20 * s, y - 87 
 bezierVertex(x + 30 * s, y - 87 * s, x + 40 * s, y, x, y);
 
 endShape();
-
+/* 
 beginShape();
 scale(0.8);
 noStroke();
@@ -56,4 +56,4 @@ bezierVertex(x - 2 * s, y - 140 * s, x + 1 * s, y - 70 * s, x + 10 * s, y - 60 *
 bezierVertex(x + 10 * s, y - 60 * s, x + 18 * s, y - 75 * s, x + 20 * s, y - 87 * s);
 bezierVertex(x + 30 * s, y - 87 * s, x + 40 * s, y, x, y);
 
-endShape();
+endShape(); */
