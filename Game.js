@@ -23,6 +23,8 @@ let shoeY = 200;
 let shoeS = 0.7;
 let shoeDirection = "right";
 let shoeSpeed = 3;
+let width = 600;
+let height = 400;
 
 // The following 26 lines of code was adapted from Garrit Schaaps lectures
 function createParticle() {
@@ -47,7 +49,7 @@ function updateParticle(particle) {
     particle.x = particle.x + Math.cos(particle.angle) * particle.velocity;
 }
   
-for (let i = 0; i < 800; i++) {
+for (let i = 0; i < 400; i++) {
     const particle = createParticle();
     particles.push(particle);
 }
@@ -1007,7 +1009,7 @@ function gamescreen(){
             
           }
         
-        if(y > 320 && velocity <=1){
+        if(y > 320 && velocity <=2){
             gameIsActive=false;
             velocity = 0;
             state = "winscreen";
