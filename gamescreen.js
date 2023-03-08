@@ -12,6 +12,13 @@ let acceleration =0.2;
 let y = -20;
 let s = 0.3;
 
+let shoeX = 30;
+let shoeY = 200;
+let shoeS = 0.7;
+let shoeSpeed = 3;
+let shoeDirection = "right";
+
+
 function draw(){
 background(10,0,20);
 
@@ -532,10 +539,63 @@ vertex(0,0);
 endShape();
 pop();
 
+stroke(59,35,19);
+strokeWeight(2 * shoeS);
+fill(96,62,32);
+
+
+beginShape();
+vertex(shoeX + 25 * shoeS, shoeY);
+bezierVertex(shoeX + 15 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 27 * shoeS);
+bezierVertex(shoeX + 25 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 37 * shoeS, shoeX + 52 * shoeS, shoeY + 30 * shoeS);
+bezierVertex(shoeX + 57 * shoeS, shoeY + 25 * shoeS, shoeX + 74 * shoeS, shoeY + 34 * shoeS, shoeX + 77 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 77 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 17 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 17 * shoeS, shoeY + 52 * shoeS);
+vertex(shoeX + 1 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX -25 * shoeS, shoeY + 55 * shoeS);
+bezierVertex(shoeX - 25 * shoeS, shoeY + 55 * shoeS, shoeX -20 * shoeS, shoeY + 25 * shoeS, shoeX - 25 * shoeS, shoeY);
+endShape();
+
+ellipse(shoeX, shoeY, 50 * shoeS, 10 * shoeS);
+
+beginShape();
+stroke(0,255,0);
+noFill();
+strokeWeight(6);
+vertex(shoeX, shoeY + 3 * shoeS);
+bezierVertex(shoeX -5 * shoeS, shoeY - 10 * shoeS, shoeX - 8 * shoeS, shoeY - 17 * shoeS, shoeX + 5 * shoeS, shoeY - 22 * shoeS);
+endShape();
+
+fill(0,255,0);
+noStroke();
+ellipse(shoeX + 17 * shoeS, shoeY - 21 * shoeS, 30 * shoeS, 12 * shoeS);
+ellipse(shoeX - 17 * shoeS, shoeY - 15 * shoeS, 25 * shoeS, 12 * shoeS);
+
+
+// 
+distance = int(dist(x, y, shoeX,shoeY));
+if ((distance < 50 && shoeDirection === "right") || (distance < 10 && shoeDirection === "left")){
+    state = "losescreen";
+    resetscreen();
+}
+
 
 if (gameIsActive === true){
    y = y + velocity;
-velocity = velocity + acceleration;
+   velocity = velocity + acceleration;
+   shoeX = shoeX + shoeSpeed;
+   if(shoeX > 540){
+    shoeSpeed = - 3 ;
+    shoeDirection = "left";
+   }
+   if(shoeX < 20){
+    shoeSpeed = + 3;
+    shoeDirection = "right";
+   }
+
+ 
+
 if (keyIsDown(32)){ 
      velocity = velocity - 0.5;}
     
@@ -548,5 +608,9 @@ if(y > 320 && velocity <=10){
 else if ( y > 320){
     gameIsActive = false;
     velocity=0;
+
 }
-} 
+function resetscreen(){
+    y= -20;
+    } 
+}  

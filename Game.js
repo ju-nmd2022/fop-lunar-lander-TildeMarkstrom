@@ -13,8 +13,13 @@ let wheelY = 0;
 let wheelXrot = 0;
 let wheelYrot = 0;
 let rotateX = 0;
+let shoeX = 30;
+let shoeY = 200;
+let shoeS = 0.7;
+let shoeDirection = "right";
+let shoeSpeed = 3;
 
-
+// The following 26 lines of code was adapted from Garrit Schaaps lectures
 function createParticle() {
     const x = Math.random() * width;
     const y = Math.random() * height;
@@ -48,6 +53,7 @@ for (let i = 0; i < 800; i++) {
 function startscreen(){
     createCanvas(600, 400);
     background(10,0,20);
+    // The following 3 lines of code was adapted from Garrit Schaaps lectures
     for (let particle of particles) {
       drawParticle(particle);
       updateParticle(particle);
@@ -483,6 +489,60 @@ fill(255,244, 40, 190);
 text("Press SPACE to start",145,180,200,40);
 }
 
+//----------------------------------shoe--------------------------------------------
+function shoe(){
+
+stroke(59,35,19);
+strokeWeight(2 * shoeS);
+fill(96,62,32);
+
+
+beginShape();
+vertex(shoeX + 25 * shoeS, shoeY);
+bezierVertex(shoeX + 15 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 27 * shoeS);
+bezierVertex(shoeX + 25 * shoeS, shoeY + 27 * shoeS, shoeX + 25 * shoeS, shoeY + 37 * shoeS, shoeX + 52 * shoeS, shoeY + 30 * shoeS);
+bezierVertex(shoeX + 57 * shoeS, shoeY + 25 * shoeS, shoeX + 74 * shoeS, shoeY + 34 * shoeS, shoeX + 77 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 77 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 17 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX + 17 * shoeS, shoeY + 52 * shoeS);
+vertex(shoeX + 1 * shoeS, shoeY + 55 * shoeS);
+vertex(shoeX -25 * shoeS, shoeY + 55 * shoeS);
+bezierVertex(shoeX - 25 * shoeS, shoeY + 55 * shoeS, shoeX -20 * shoeS, shoeY + 25 * shoeS, shoeX - 25 * shoeS, shoeY);
+endShape();
+
+ellipse(shoeX, shoeY, 50 * shoeS, 10 * shoeS);
+
+beginShape();
+stroke(0,255,0);
+noFill();
+strokeWeight(6);
+vertex(shoeX, shoeY + 3 * shoeS);
+bezierVertex(shoeX -5 * shoeS, shoeY - 10 * shoeS, shoeX - 8 * shoeS, shoeY - 17 * shoeS, shoeX + 5 * shoeS, shoeY - 22 * shoeS);
+endShape();
+
+fill(0,255,0);
+noStroke();
+ellipse(shoeX + 17 * shoeS, shoeY - 21 * shoeS, 30 * shoeS, 12 * shoeS);
+ellipse(shoeX - 17 * shoeS, shoeY - 15 * shoeS, 25 * shoeS, 12 * shoeS);
+
+shoeX = shoeX + shoeSpeed;
+
+if(shoeX > 540){
+    shoeSpeed = - 3 ;
+    shoeDirection = "left";
+}
+    if(shoeX < 20){
+    shoeSpeed = + 3;
+    shoeDirection = "right";
+}
+
+distance = int(dist(x, y, shoeX,shoeY));
+if ((distance < 70 && shoeDirection === "right") || (distance < 90 && shoeDirection === "left")){
+    state = "losescreen";
+    resetscreen();
+}
+
+}
 
 //---------------------------------------fire---------------------------------------
 
@@ -943,7 +1003,7 @@ function gamescreen(){
             
           }
         
-        if(y > 320 && velocity <=3){
+        if(y > 320 && velocity <=1){
             gameIsActive=false;
             velocity = 0;
             state = "winscreen";
@@ -1532,7 +1592,9 @@ textSize(20);
 fill(255, 244, 40, 190);
 text("Oh no! Wall-e crashed!",185,150,300,40);
 text("Press R to retry",220,190,200,40);
-
+}
+//-----------------------------------cogwheel----------------------------------
+function cogwheel(){
 push();
 rectMode(CENTER);
 
@@ -1568,26 +1630,41 @@ wheelX = wheelX + 2.83;
 
 wheelXrot = wheelXrot  + 2;
 wheelYrot = wheelYrot  - 2;
-
 }
+
+//------------------------function-------------------------------------------------
 
 if(state === "gamescreen" && gameIsActive === true){
     y = y + velocity;
     velocity = velocity + acceleration;
+    shoeX = shoeX + shoeSpeed;
+    
 }
 
 
- 
- function resetscreen(){
+// The following 2 lines of code was adapted from youtube https://www.youtube.com/watch?v=Dz5_9_30-to&ab_channel=P5JStutorials
+distance = int(dist(x, y, shoeX,shoeY));
+if ((distance < 50 && shoeDirection === "right") || (distance < 10 && shoeDirection === "left")){
+    state = "losescreen";
+    resetscreen();
+}
+
+function resetscreen(){
 y= -20;
-/* wheelX = 1;
-wheelY = 1;
-wheelXrot =1;
-wheelXrot = 1; */
+shoeX = 20;
+}  
 
-
-} 
-
+function shoeMovement(){
+    shoeX = shoeX + shoeSpeed;
+    if(shoeX > 540){
+        shoeSpeed = - 3 ;
+        shoeDirection = "left";
+       }
+       if(shoeX < 20){
+        shoeSpeed = + 3;
+        shoeDirection = "right";
+   }
+}
 //screens
 
 function draw(){
@@ -1599,28 +1676,26 @@ function draw(){
         gameIsActive = true;
         gamescreen();
         wallE();
+        shoe();
           }
     else if (state === "losescreen"){
         losescreen();
+        cogwheel();
         resetscreen();
     }
     else if (state === "winscreen"){
         winscreen();
         resetscreen();
     }
-
     if (keyIsDown(32) && state === "startscreen") {
     state = "gamescreen";
  }
  if(state === "winscreen" && keyIsDown(82)){
     state = "gamescreen";
-
 }
 
 if(state === "losescreen" && keyIsDown(82)){
     state = "gamescreen";
-    
+   
 }
-
-
 }
