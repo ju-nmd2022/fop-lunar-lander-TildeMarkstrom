@@ -1183,7 +1183,7 @@ endShape();
 
 textSize(20);
 fill(255, 244, 40, 190);
-text("You made it, Wall-e landed safely!",145,150,350,40);
+text("You made it, WALL•E landed safely!",145,150,350,40);
 text("Press R to try again",205,190,200,40);
 
 //wheel right + left)
@@ -1591,7 +1591,7 @@ endShape();
 
 textSize(20);
 fill(255, 244, 40, 190);
-text("Oh no! Wall-e crashed!",185,150,300,40);
+text("Oh no! WALL•E crashed!",185,150,300,40);
 text("Press R to retry",220,190,200,40);
 }
 //-----------------------------------cogwheel----------------------------------
@@ -1621,7 +1621,6 @@ stroke(120);
 strokeWeight(0);
 ellipse(wheelX, wheelY, 60);
 
-
 strokeWeight(3);
 fill(236,218,194);
 ellipse(wheelX, wheelY, 30);
@@ -1639,9 +1638,7 @@ if(state === "gamescreen" && gameIsActive === true){
     y = y + velocity;
     velocity = velocity + acceleration;
     shoeX = shoeX + shoeSpeed;
-    
 }
-
 
 // The following 2 lines of code was adapted from youtube https://www.youtube.com/watch?v=Dz5_9_30-to&ab_channel=P5JStutorials
 distance = int(dist(x, y, shoeX,shoeY));
@@ -1697,6 +1694,5 @@ function draw(){
 
 if(state === "losescreen" && keyIsDown(82)){
     state = "gamescreen";
-   
 }
 }
