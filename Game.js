@@ -1,3 +1,8 @@
+function setup(){
+    createCanvas(600,400);
+    frameRate(30);
+}
+
 let particles = [];
 let x = 295;
 let velocity = 1;
@@ -51,7 +56,6 @@ for (let i = 0; i < 800; i++) {
 //---------------------------------startscreen-----------------------------------
 
 function startscreen(){
-    createCanvas(600, 400);
     background(10,0,20);
     // The following 3 lines of code was adapted from Garrit Schaaps lectures
     for (let particle of particles) {
@@ -1012,11 +1016,7 @@ function gamescreen(){
             gameIsActive = false;
             velocity=0;
             state ="losescreen";
-        }
-
-    createCanvas(600, 400);
-    frameRate(30);
-    
+        }    
    
     background(10,0,20);
     for (let particle of particles) {
@@ -1115,7 +1115,6 @@ function gamescreen(){
 
 
 function winscreen(){
-createCanvas(600, 400);
 
 background(10,0,20);
 for (let particle of particles) {

@@ -1,5 +1,6 @@
-createCanvas(600, 400);
-
+function setup(){
+window.createCanvas(600, 400);
+}
 
 let particles = [];
 
